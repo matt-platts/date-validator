@@ -5,9 +5,9 @@
 <script src="date-validator.js"></script>
 </head>
 <body>
-<p>Many date validation programs do not take into account illegal dates such as 30th february and simply do a regex check. This is my answer to this frequent issue (nb: does not include the regex).</p>
-<p>Simply splitting the component parts of the date, creating a new date object, and checking the day, month and year match the original is all that is required - as a js date object will automatically increment if an illegal value is entered. Eg. 32nd January will become 1st february - thus the date and month will no longer match. Simple :)</p>
-<p>Enter a date in dd/mm/yyyy format:</p>
+<p>Many date validation programs do not take into account illegal dates such as 30th february or 29th of february on non-leap years, and simply do a regex check.<br /> This is my answer to this frequent issue.</p>
+<p>Explanation: Simply splitting the component parts of the date, creating a new date object, and checking the day, month and year match the original is all that is required - as a js date object will automatically increment if an illegal value is entered. Eg. 32nd January will become 1st february - thus the date and month will no longer match. Simple :)</p>
+<p>Enter a date in dd/mm/yyyy or dd-mm-yyyy format - alerts true for valid dates and false for invalid dates:</p>
 <input id="dateinput" />
 <input type="submit" onClick="alert(validateDate(document.getElementById('dateinput').value))" value="Validate" />
 </body>
